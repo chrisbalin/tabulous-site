@@ -1,0 +1,37 @@
+---
+// Generate a mathematically perfect starburst
+const points = 20
+const outerR = 96
+const innerR = 68
+const cx = 100
+const cy = 100
+const pathPoints: string[] = []
+
+for (let i = 0; i < points * 2; i++) {
+  const angle = (Math.PI * 2 * i) / (points * 2) - Math.PI / 2
+  const r = i % 2 === 0 ? outerR : innerR
+  const x = cx + r * Math.cos(angle)
+  const y = cy + r * Math.sin(angle)
+  pathPoints.push(`${x.toFixed(1)},${y.toFixed(1)}`)
+}
+
+const polygon = pathPoints.join(' ')
+---
+
+<!-- Single confident starburst - AI-Powered! -->
+<div class="absolute top-[12%] right-[5%] z-2 w-[200px] h-[200px] max-lg:w-[160px] max-lg:h-[160px] max-md:hidden animate-[fade-up_0.8s_ease-out_1.2s_both]">
+  <div class="relative w-full h-full animate-[spin-slow_40s_linear_infinite]">
+    <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[3px_3px_0_var(--color-dark-brown)]">
+      <polygon
+        points={polygon}
+        fill="var(--color-mustard)"
+        stroke="var(--color-dark-brown)"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+  <span class="absolute inset-0 flex items-center justify-center font-heading font-black text-lg max-lg:text-base uppercase text-dark-brown text-center leading-tight tracking-wide">
+    AI-<br />Powered!
+  </span>
+</div>

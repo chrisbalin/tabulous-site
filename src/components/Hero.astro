@@ -1,0 +1,60 @@
+---
+import ChromeIcon from './ChromeIcon.astro'
+import Starburst from './Starburst.astro'
+---
+
+<section class="relative flex flex-col items-center justify-center text-center px-8 pt-56 pb-64 overflow-hidden">
+  <!-- Warm radial spotlight behind content -->
+  <div class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_45%,var(--color-warm-white)_0%,var(--color-cream)_70%)]"></div>
+
+  <!-- Bold single-angle retro stripes -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250%] h-[250%] rotate-[-12deg]">
+      <div class="absolute inset-0 flex flex-col items-stretch justify-center">
+        <div class="h-[40px] bg-retro-purple/[0.08]"></div>
+        <div class="h-[90px] bg-transparent"></div>
+        <div class="h-[28px] bg-burnt-orange/[0.12]"></div>
+        <div class="h-[60px] bg-transparent"></div>
+        <div class="h-[50px] bg-mustard/[0.15]"></div>
+        <div class="h-[140px] bg-transparent"></div>
+        <div class="h-[70px] bg-burnt-orange/[0.1]"></div>
+        <div class="h-[24px] bg-retro-purple/[0.06]"></div>
+        <div class="h-[200px] bg-transparent"></div>
+        <div class="h-[18px] bg-mustard/[0.12]"></div>
+        <div class="h-[100px] bg-transparent"></div>
+        <div class="h-[55px] bg-retro-purple/[0.1]"></div>
+        <div class="h-[80px] bg-transparent"></div>
+        <div class="h-[35px] bg-burnt-orange/[0.14]"></div>
+        <div class="h-[50px] bg-transparent"></div>
+        <div class="h-[22px] bg-mustard/[0.1]"></div>
+        <div class="h-[120px] bg-transparent"></div>
+        <div class="h-[45px] bg-burnt-orange/[0.08]"></div>
+      </div>
+    </div>
+  </div>
+
+  <Starburst />
+
+  <span class="relative z-1 animate-[fade-up_0.6s_ease-out_0.2s_both] inline-block px-4 py-1.5 text-medium-brown/70 font-body font-semibold text-xs tracking-widest uppercase mb-1">
+    A Chrome Extension
+  </span>
+
+  <img
+    src="/tabulous.png"
+    alt="Tabulous!"
+    class="relative z-1 max-w-[min(550px,80vw)] h-auto mb-0 animate-[title-in_0.8s_ease-out_0.4s_both] drop-shadow-[0_4px_16px_rgba(58,26,8,0.12)]"
+  />
+
+  <p class="relative z-1 font-body text-[clamp(1.2rem,2.5vw,1.6rem)] font-medium text-medium-brown max-w-[700px] mx-auto mb-12 leading-relaxed animate-[fade-up_0.8s_ease-out_0.6s_both] whitespace-nowrap max-sm:whitespace-normal max-sm:max-w-[300px]">
+    Your tabs are a mess. Let's make them fabulous.
+  </p>
+
+  <a
+    href="https://chrome.google.com/webstore"
+    class="relative z-1 inline-flex items-center gap-3 px-10 py-4 bg-retro-purple text-cream border-3 border-dark-brown rounded-full font-heading font-extrabold text-xl no-underline cursor-pointer transition-all shadow-[4px_4px_0_var(--color-dark-brown)] animate-[fade-up_0.8s_ease-out_0.8s_both] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_var(--color-dark-brown)] hover:bg-deep-purple active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0_var(--color-dark-brown)]"
+  >
+    <ChromeIcon />
+    Add to Chrome
+  </a>
+
+</section>

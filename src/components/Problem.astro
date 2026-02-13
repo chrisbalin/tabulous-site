@@ -1,0 +1,67 @@
+<section class="relative py-40 px-8 bg-dark-brown text-cream overflow-hidden">
+  <!-- Risograph-style grain texture -->
+  <div class="absolute inset-0 opacity-[0.12] mix-blend-soft-light pointer-events-none" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E&quot;); background-size: 512px 512px;"></div>
+
+  <div class="relative z-1 max-w-4xl mx-auto">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+      <!-- Left: giant counter -->
+      <div class="reveal flex-shrink-0 flex flex-col items-center">
+        <div id="tabCounter" class="flex justify-center font-heading font-black text-[10rem] max-sm:text-8xl leading-none text-burnt-orange drop-shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+          <span class="inline-block w-[0.6em] text-center">0</span>
+        </div>
+        <span class="font-body font-semibold text-base uppercase tracking-wider text-cream/70 mt-4">
+          tabs open right now
+        </span>
+      </div>
+
+      <!-- Right: headline + body -->
+      <div class="text-center lg:text-left">
+        <h2 class="reveal font-heading font-bold text-[clamp(2rem,4vw,2.8rem)] leading-[1.2] mb-6">
+          You have <span class="text-burnt-orange font-black">way too many tabs</span> open right now.
+        </h2>
+
+        <p class="reveal text-xl leading-relaxed text-cream/90 max-w-lg">
+          You know it. We know it. That one tab you need is buried somewhere between a recipe you'll never cook and a doc you opened three days ago.
+        </p>
+
+        <p class="reveal mt-4 text-xl leading-relaxed text-cream/90 max-w-lg">
+          Tab managers exist, but they all expect <em class="not-italic font-semibold text-burnt-orange">you</em> to do the organizing. That's not a solution. That's more work.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const counterEl = document.getElementById('tabCounter')
+  if (counterEl) {
+    let started = false
+
+    function renderDigits(n: number) {
+      const digits = String(n).split('')
+      counterEl.innerHTML = digits
+        .map((d) => `<span class="inline-block w-[0.6em] text-center">${d}</span>`)
+        .join('')
+    }
+
+    new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting && !started) {
+            started = true
+            let count = 0
+            function tick() {
+              count++
+              renderDigits(count)
+              const delay = 30 + (370 * (1 - 1 / (1 + count * 0.04)))
+              requestAnimationFrame(() => setTimeout(tick, delay))
+            }
+            tick()
+          }
+        })
+      },
+      { threshold: 0.5 },
+    ).observe(counterEl)
+  }
+</script>

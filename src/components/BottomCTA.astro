@@ -1,0 +1,42 @@
+---
+import ChromeIcon from './ChromeIcon.astro'
+---
+
+<section class="relative flex flex-col items-center pt-24 pb-8 px-8 text-center overflow-hidden" style="background-color: #f5d979;">
+  <!-- Angled retro stripes -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250%] h-[250%] rotate-[-12deg]">
+      <div class="absolute inset-0 flex flex-col items-stretch justify-center">
+        <div class="h-[35px] bg-burnt-orange/[0.1]"></div>
+        <div class="h-[80px] bg-transparent"></div>
+        <div class="h-[50px] bg-retro-purple/[0.08]"></div>
+        <div class="h-[120px] bg-transparent"></div>
+        <div class="h-[25px] bg-burnt-orange/[0.12]"></div>
+        <div class="h-[60px] bg-transparent"></div>
+        <div class="h-[40px] bg-retro-purple/[0.06]"></div>
+        <div class="h-[150px] bg-transparent"></div>
+        <div class="h-[30px] bg-burnt-orange/[0.08]"></div>
+        <div class="h-[90px] bg-transparent"></div>
+        <div class="h-[45px] bg-retro-purple/[0.1]"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative z-1">
+    <h2 class="reveal font-heading font-black text-[clamp(2.5rem,6vw,4.5rem)] text-dark-brown mb-10" style="text-shadow: 3px 3px 0 rgba(58,26,8,0.15);">
+      Ready to get Tabulous?
+    </h2>
+    <a
+      href="https://chrome.google.com/webstore"
+      class="reveal inline-flex items-center gap-3 px-10 py-4 bg-retro-purple text-cream border-3 border-dark-brown rounded-full font-heading font-extrabold text-xl no-underline cursor-pointer transition-all shadow-[4px_4px_0_var(--color-dark-brown)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_var(--color-dark-brown)] hover:bg-deep-purple active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0_var(--color-dark-brown)]"
+    >
+      <ChromeIcon />
+      Add to Chrome
+    </a>
+  </div>
+
+  <footer class="relative z-1 mt-auto pt-20 text-center text-sm">
+    <div class="w-16 h-px bg-dark-brown/20 mx-auto mb-6"></div>
+    <span class="text-dark-brown/60">Stay fabulous.</span> ✌️
+  </footer>
+</section>

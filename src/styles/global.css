@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF5EB;
+  --color-warm-white: #FFF8F0;
+  --color-burnt-orange: #FE6C00;
+  --color-deep-orange: #E55A00;
+  --color-mustard: #E8A825;
+  --color-light-orange: #F4A93C;
+  --color-dark-brown: #3A1A08;
+  --color-medium-brown: #6B3A1F;
+  --color-retro-purple: #7B2D8E;
+  --color-deep-purple: #5E1A6E;
+
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'DM Sans', sans-serif;
+}

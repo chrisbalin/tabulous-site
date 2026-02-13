@@ -1,0 +1,72 @@
+---
+const steps = [
+  {
+    number: '1',
+    title: 'Open the sidebar',
+    desc: 'See all your tabs grouped by window. Finally, a clear picture of what you actually have open.',
+    color: 'retro-purple',
+  },
+  {
+    number: '2',
+    title: 'Hit Organize',
+    desc: 'Tabulous reads your tabs and proposes topic-based groups. Don\u2019t like it? Re-roll or arrange them yourself.',
+    color: 'burnt-orange',
+  },
+  {
+    number: '3',
+    title: 'Apply & go',
+    desc: 'One click and your tabs reorganize into clean, focused windows. Everything in its right place.',
+    color: 'mustard',
+  },
+]
+
+const colorClasses: Record<string, { number: string; shadow: string; border: string }> = {
+  'retro-purple': {
+    number: 'text-retro-purple',
+    shadow: 'drop-shadow-[3px_3px_0_var(--color-deep-purple)]',
+    border: 'border-retro-purple',
+  },
+  'burnt-orange': {
+    number: 'text-burnt-orange',
+    shadow: 'drop-shadow-[3px_3px_0_var(--color-deep-orange)]',
+    border: 'border-burnt-orange',
+  },
+  'mustard': {
+    number: 'text-mustard',
+    shadow: 'drop-shadow-[3px_3px_0_var(--color-dark-brown)]',
+    border: 'border-mustard',
+  },
+}
+---
+
+<section class="relative py-28 px-8 overflow-hidden">
+  <!-- S-curve racing stripes -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 1000" preserveAspectRatio="none" fill="none">
+    <path d="M-50,0 C200,100 100,350 600,450 C1100,550 1000,800 1250,1000" stroke="var(--color-retro-purple)" stroke-width="6" opacity="0.12" />
+    <path d="M-50,20 C200,120 100,370 600,470 C1100,570 1000,820 1250,1020" stroke="var(--color-burnt-orange)" stroke-width="5" opacity="0.10" />
+    <path d="M-50,40 C200,140 100,390 600,490 C1100,590 1000,840 1250,1040" stroke="var(--color-mustard)" stroke-width="6" opacity="0.14" />
+    <path d="M-50,58 C200,158 100,408 600,508 C1100,608 1000,858 1250,1058" stroke="var(--color-burnt-orange)" stroke-width="4" opacity="0.08" />
+  </svg>
+
+  <div class="relative z-1 max-w-4xl mx-auto">
+    <h2 class="reveal font-heading font-black text-[clamp(2rem,5vw,3rem)] text-center mb-20">Three clicks to clarity.</h2>
+
+    <div class="flex flex-col gap-20">
+      {steps.map((step, i) => {
+        const c = colorClasses[step.color]
+        const isEven = i % 2 === 0
+        return (
+          <div class={`reveal reveal-delay-${i + 1} flex items-center gap-8 lg:gap-14 flex-row max-md:flex-col max-md:!ml-0`} style={`margin-left: ${i * 12}%;`}>
+            <div class={`flex-shrink-0 font-heading font-black text-[12rem] max-md:text-[8rem] leading-none ${c.number} ${c.shadow} select-none`}>
+              {step.number}
+            </div>
+            <div class={`border-l-4 ${c.border} pl-8 max-md:border-l-0 max-md:border-t-4 max-md:pt-6 max-md:pl-0 max-md:text-center`}>
+              <h3 class="font-heading font-extrabold text-2xl mb-3">{step.title}</h3>
+              <p class="text-lg leading-relaxed text-medium-brown max-w-md">{step.desc}</p>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  </div>
+</section>

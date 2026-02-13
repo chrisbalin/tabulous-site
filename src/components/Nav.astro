@@ -1,0 +1,16 @@
+---
+import ChromeIcon from './ChromeIcon.astro'
+---
+
+<nav id="nav" class="fixed top-0 left-0 right-0 z-100 flex items-center justify-between px-4 sm:px-8 py-3 bg-cream border-b-2 border-dark-brown transition-shadow">
+  <a href="#">
+    <img src="/tabulous-t.png" alt="Tabulous!" class="h-[60px] rounded-lg" />
+  </a>
+  <a
+    href="https://chrome.google.com/webstore"
+    class="inline-flex items-center gap-2 px-5 py-2 bg-retro-purple text-cream border-2 border-dark-brown rounded-full font-body font-bold text-sm no-underline cursor-pointer transition-all shadow-[3px_3px_0_var(--color-dark-brown)] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0_var(--color-dark-brown)] hover:bg-deep-purple active:translate-x-[2px] active:translate-y-[2px] active:shadow-[1px_1px_0_var(--color-dark-brown)]"
+  >
+    <ChromeIcon size={18} />
+    Add to Chrome
+  </a>
+</nav>
